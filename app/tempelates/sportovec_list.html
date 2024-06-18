@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2 class="text-center bg-info text-light p-2 mt-2 mb-3">Seznam sportovců</h2>
+        <table class="table table-dark auto-list">
+            <thead class="bg-secondary">
+                <tr>
+                    <th>Jméno a příjmení </th>
+                    <th>Národnost</th>
+                    <th>Tým</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for sportovec in sportovci %}
+                <tr>
+                    <td><b><a href="{% url 'sportovec_detail' sportovec.id %}" class="text-info">{{ sportovec.jmeno }} {{ sportovec.prijmeni }}</a></b></td>
+                    <td>{{ sportovec.narodnost }}</td>
+                    <td>{{ sportovec.tym }}</td>
+                {% endfor %}
+            </tbody>
+        </table>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-lg-8 mt-3 mb-3">
+            <h2 class="bg-info text-light text-center text-uppercase p-3">{{ nadpis }}</h2>
+            {% for sportovec in sportovci %}
+            <div class="row mb-3">
+                <div class="col-lg-9">
+                    <p>{% for autor in sportovec.tym %}<span class="badge badge-light">{{ sportovec.jmeno }} {{ sportovec.prijmeni }}</span>{% endfor %}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
