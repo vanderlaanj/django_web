@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2 class="text-center bg-info text-light p-2 mt-2 mb-3">Seznam akcí</h2>
+        <table class="table table-dark auto-list">
+            <thead class="bg-secondary">
+                <tr>
+                    <th>Místo </th>
+                    <th>Datum</th>
+                    <th>Čas</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for akce in akce %}
+                <tr>
+                    <td><b><a href="{% url 'akce_detail' akce.id %}" class="text-info">{{ akce.misto }}</a></b></td>
+                    <td>{{ akce.datum }}</td>
+                    <td>{{ akce.cas }}</td>
+                {% endfor %}
+            </tbody>
+        </table>
+{% endblock %}

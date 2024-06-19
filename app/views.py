@@ -5,29 +5,29 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView
 
-from models import sportovec, tym, akce
+from .models import Sportovec, Tym, Akce
 # Create your views here.
 
-class index(ListView):
-    template_name = 'tempelates/index.html'
+def index(request):
+    return render(request, 'index.html')
 
 class SportovecDetail(DetailView):
-    model = sportovec
-    template_name = 'tempelate/sportovec_detail.html'
+    model = Sportovec
+    template_name = 'sportovec/sportovec_detail.html'
     context_object_name = 'sportovec'
 
 class SportovecList(ListView):
-    model = sportovec
-    template_name = 'tempelates/sportovec_list.html'
+    model = Sportovec
+    template_name = 'sportovec/sportovec_list.html'
     context_object_name = 'sportovci'
     ordering = ['prijmeni']
 
 class AkceDetail(DetailView):
-    model = akce
-    template_name = 'tempelates/akce_detail.html'
+    model = Akce
+    template_name = 'akce/akce_detail.html'
     context_object_name = 'akce'
 
 class AkceList(ListView):
-    model = akce
-    template_name = 'tempelates/akce_list.html'
+    model = Akce
+    template_name = 'akce/akce_list.html'
     context_object_name = 'akce'

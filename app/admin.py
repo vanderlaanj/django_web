@@ -1,7 +1,7 @@
 from django.contrib import admin
-from .models import sportovec, tym, akce
+from .models import Sportovec, Tym, Akce
 
-admin.site.register(sportovec)
-admin.site.register(tym)
-admin.site.register(akce)
+admin.site.register(Sportovec)
+admin.site.register(Tym)
+admin.site.register(Akce)
 # Register your models here.
